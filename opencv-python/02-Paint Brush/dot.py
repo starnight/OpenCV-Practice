@@ -12,6 +12,8 @@ img = 0
 
 # Mouse callback function
 def draw_circle(event, x, y, flags, param):
+	global img
+
 	if event == cv2.EVENT_LBUTTONDBLCLK:
 		center = (x, y)
 		radius = 100
