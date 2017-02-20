@@ -23,7 +23,11 @@ def draw_circle(event, x, y, flags, param):
 
 if __name__ == '__main__':
 	# Create a black image, a window and bind the function to window
-	img = np.zeros((512,512,3), np.uint8)
+	img_size = (512,	# X size
+				512,	# Y size
+				3)		# 3 bytes for RGB color domain
+	bits = np.uint8		# Bits for each pixel
+	img = np.zeros(img_size, bits)
 	window_name = 'Paint Brush'
 	cv2.namedWindow(window_name)
 	cv2.setMouseCallback(window_name, draw_circle)
