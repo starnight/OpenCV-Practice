@@ -18,7 +18,7 @@ reg = img[130:170, 90:120]
 # Copy the small region into other region
 img[0:40, 0:30] = reg
 
-# Show the modify image
+# Show the modified image
 cv2.imshow('Image ROI - Modified', img)
 cv2.waitKey(0)
 
