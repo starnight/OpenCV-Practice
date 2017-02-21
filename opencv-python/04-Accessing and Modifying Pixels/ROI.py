@@ -9,13 +9,8 @@ import cv2
 # Read the image file into img
 img = cv2.imread("opencv-logo-white.png")
 
-# Create a window
-window_name = 'Image ROI'
-cv2.namedWindow(window_name)
-
 # Show original image
-cv2.imshow(window_name, img)
-cv2.waitKey(0)
+cv2.imshow('Image ROI - Original', img)
 
 # Have a small region of the image
 reg = img[130:170, 90:120]
@@ -24,7 +19,7 @@ reg = img[130:170, 90:120]
 img[0:40, 0:30] = reg
 
 # Show the modify image
-cv2.imshow(window_name, img)
+cv2.imshow('Image ROI - Modified', img)
 cv2.waitKey(0)
 
 cv2.destroyAllWindows()
