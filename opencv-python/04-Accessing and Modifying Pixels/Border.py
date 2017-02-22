@@ -13,12 +13,24 @@ img = cv2.imread("opencv-logo-white.png")
 # The color of pyplot is [R, G, B]
 border_color = [255, 0, 0]
 
+# Border width
+top, bottom, left, right = 10, 10, 10, 10
+
 # Make different borders
-replicate = cv2.copyMakeBorder(img, 10, 10, 10, 10, cv2.BORDER_REPLICATE)
-reflect = cv2.copyMakeBorder(img, 10, 10, 10, 10, cv2.BORDER_REFLECT)
-reflect101 = cv2.copyMakeBorder(img, 10, 10, 10, 10, cv2.BORDER_REFLECT_101)
-wrap = cv2.copyMakeBorder(img, 10, 10, 10, 10, cv2.BORDER_WRAP)
-constant = cv2.copyMakeBorder(img, 10, 10, 10, 10, cv2.BORDER_CONSTANT, value=border_color)
+border_type = cv2.BORDER_REPLICATE
+replicate = cv2.copyMakeBorder(img, top, bottom, left, right, border_type)
+
+border_type = cv2.BORDER_REFLECT
+reflect = cv2.copyMakeBorder(img, top, bottom, left, right, border_type)
+
+border_type = cv2.BORDER_REFLECT_101
+reflect101 = cv2.copyMakeBorder(img, top, bottom, left, right, border_type)
+
+border_type = cv2.BORDER_WRAP
+wrap = cv2.copyMakeBorder(img, top, bottom, left, right, border_type)
+
+border_type = cv2.BORDER_CONSTANT
+constant = cv2.copyMakeBorder(img, top, bottom, left, right, border_type, value=border_color)
 
 # Show images with borders
 plt.subplot(231), plt.imshow(img, "gray"), plt.title("ORIGINAL")
